@@ -49,7 +49,7 @@ function convert(tokens) {
     }).join(' + ') + ';'
   );
   return function sync(properties) {
-    return escape(fn.call(properties));
+    return fn.call(properties);
   };
 }
 
