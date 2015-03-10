@@ -1,0 +1,27 @@
+{
+  "name": "fly-template",
+  "version": "0.1.0",
+  "description": "A template engine that flies!",
+  "main": "fly-template.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leahciMic/fly-template"
+  },
+  "keywords": [
+    "template"
+  ],
+  "bugs": {
+    "url": "https://github.com/leahciMic/fly-template/issues"
+  },
+  "homepage": "https://github.com/leahciMic/fly-template",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine"
+  },
+  "author": "Michael Leaney <leahcimic@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "jasmine": "^2.2.1",
+    "uglify-js": "^2.4.16"
+  }
+}

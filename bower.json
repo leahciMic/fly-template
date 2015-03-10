@@ -1,0 +1,26 @@
+{
+  "name": "fly-template",
+  "main": "dist/fly-template.js",
+  "version": "0.1.0",
+  "authors": [
+    "Michael Leaney <leahcimic@gmail.com>"
+  ],
+  "description": "A template engine that flies!",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "template"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/leahciMic/fly-template",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
