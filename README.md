@@ -1,4 +1,4 @@
-# Fly template - a template engine that flies
+# Fly template - a template engine that flies [![Build Status](https://travis-ci.org/leahciMic/fly-template.svg?branch=master)](https://travis-ci.org/leahciMic/fly-template)
 
 Fly templates are similar to ES6 strings. You can interpolate variables and
 expressions using the `${}` syntax. Template properties are exposed on this,
