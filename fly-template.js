@@ -32,7 +32,7 @@ function parse(str) {
     }
   }
 
-  if (startIndex !== i) {
+  if (startIndex !== l) {
     tokens.push({
       type: 'text',
       value: str.substring(startIndex, i)
@@ -53,6 +53,13 @@ function convert(tokens) {
   };
 }
 
-module.exports = function(str) {
+var API;
+
+API = function(str) {
   return convert(parse(str));
 };
+
+API.parse = parse;
+API.convert = convert;
+
+module.exports = API;

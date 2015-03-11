@@ -4,9 +4,7 @@ Fly templates are similar to ES6 strings. You can interpolate variables and
 expressions using the `${}` syntax. Template properties are exposed on this,
 and can be accessed with `${this.property}`.
 
-## Why
-
-Why not?
+It compiles the template into a function that's very quick to execute.
 
 ## How to use
 
@@ -16,7 +14,7 @@ A template is very similar to ES6 template strings. Use ${} to enclose
 expressions and have them interpolated on render.
 
 ```js
-var template = 'Hello ${this.name}, it is currently ${new Date().toTimeString()}.';
+var template = 'Hello ${this.place}! It is currently ${new Date().toTimeString()}.';
 ```
 
 ### Compilation
@@ -33,28 +31,40 @@ Now we can render the template with some associated data.
 
 ```js
 render({
-  name: 'Michael'
+  place: 'world'
 });
 ```
 
-Produces something like: `Hello Michael, it is currently 16:20:29 GMT+1100 (AEDT)`.
+Produces something like: `Hello world!, it is currently 16:20:29 GMT+1100 (AEDT)`.
 
 ### Full example
 
 ```js
 var flyTemplate = require('fly-template'),
-    template = 'Hello ${this.name}, it is currently ${new Date().toTimeString()}.',
+    template = 'Hello ${this.place}, it is currently ${new Date().toTimeString()}.',
     render = flyTemplate(template);
 
 console.log(
   render({
-    name: 'Michael'
+    place: 'world!'
   })
 );
 ```
 
-Produces something like: `Hello Michael, it is currently 16:20:29 GMT+1100 (AEDT)`.
+Produces something like: `Hello world!, it is currently 16:20:29 GMT+1100 (AEDT)`.
+
+## Methods
+
+### .parse(template)
+
+Parses the template and produces a JSON structure that can be passed/transmitted
+around that can be converted to a function using `.convert()`. Ideal to save clients from having to
+parse the template.
+
+### .convert()
+
+Converts the JSON structure exported by `.parse()` into the render function.
 
 ## Contributing
 
-Create a branch, send a PR.
+Fork the project, create a feature branch, and send a pull-request.

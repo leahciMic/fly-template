@@ -9,4 +9,14 @@ describe('Fly template', function() {
     var render = flyTemplate('Hello ${this.names.join(\', \')}');
     expect(render({names: ['Michael', 'Ema']})).toEqual('Hello Michael, Ema');
   });
+  it('should expose .convert()', function() {
+    var json = flyTemplate.parse('H${this.a}');
+    expect(json).toEqual([{
+      type: 'text',
+      value: 'H'
+    }, {
+      type: 'expression',
+      value: 'this.a'
+    }]);
+  });
 });
